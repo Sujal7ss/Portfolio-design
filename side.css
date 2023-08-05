@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+
+}
+html, body {
+    height: 100%;
+}
+body {
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.header {
+    height: 60px;
+    width: 100%;
+    
+    position: fixed;
+    z-index:10;
+    top:0;
+}
+
+
+
+.text {
+    margin-top:70px;
+    height:100%;
+    padding: 10px 50px;
+}
+
+#sidebar {
+    height: 100%;
+    position: fixed;
+    left:0;
+    top:0;
+    width:250px;
+    margin-top:60px;
+    background-color: cyan;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+}
+
+#openSide:checked ~ #sidebar{
+    transform: translateX(0px);
+}
+
+.sidebarList a {
+    text-decoration: none;
+    color:white;
+    
+}
+
+.sidebarList li {
+    list-style: none;
+    margin-top : 20px;
+}
+
+.sidebarToggle {
+    width:22px;
+    height:22px;
+    position: fixed;
+    
+    z-index:20;
+    top:22px;
+    left:15px;
+    cursor: pointer;
+}
+
+.screen {
+    height:3px;
+    background-color: rgb(1, 1, 1);
+    transition: all 0.3s;
+}
+
+.screen.middle, .screen.bottom {
+    margin-top: 3px;
+}
+
+#openSide:checked ~ .sidebarToggle > .screen.middle{
+    opacity:0;
+}
+
+#openSide:checked ~ .sidebarToggle > .screen.top {
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+#openSide:checked ~ .sidebarToggle > .screen.bottom {
+    transform: rotate(-135deg);
+    margin-top:-9px;
+}

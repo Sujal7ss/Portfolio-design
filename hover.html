@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docum</title>
+    <style>
+        .f1{
+            background-color:rgb(95, 82, 82);
+            width:400px;
+            height:400px;
+            
+            margin:100px;
+
+        }
+        .f1:hover {
+            transform: translateY(-10px);
+            transition: transform 250ms ease-in-out;
+        }
+        .f2 {
+            margin-top: 50px;
+            float: right;
+           width: 350px;
+           background-color:grey;
+        }
+        .sbtn {
+            float: right;
+            background-color:cyan;
+            width:50px;
+            height: 50px;
+            display: none;
+        }
+        #toogle:checked ~ .f2{
+            display: none;
+        }
+        @media only screen and (max-width:900px){
+            .sbtn {
+                display: block;
+            }
+        }
+        .about {
+            width:300px;
+            height:300px;
+            margin-left:300px;
+            background-color: grey;
+            display: none;
+        }
+        h3 {
+            text-align: center;
+            
+        }
+        h3:hover + .about {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h3><a href="#">About Me</a></h3>
+    
+    <div class="fe">
+        <div class="about"></div>
+        <div class="f1">
+            Awards won
+        </div>
+        <input type="checkbox"  id="toogle">
+        <label for="toogle">
+            <div class="sbtn"></div>
+        </label>
+        <div class="f2">
+            <ul><li>About Me</li>
+            <li>About Me</li>
+            <li>About Me</li>
+            <li>About Me</li>
+            <li>About Me</li>
+            <li>About Me</li></ul>
+        </div>
+    </div>
+    
+</body>
+</html>
